@@ -1,0 +1,26 @@
+# Never commit secrets or credentials
+*.pem
+*.key
+*.pfx
+.env
+.env.*
+secrets.*
+credentials
+aws-credentials*
+*.tfvars
+
+# Python virtual environment and caches
+alp-env/
+__pycache__/
+*.pyc
+.venv/
+
+# OpenTofu / Terraform local state and working files
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# OS noise
+.DS_Store
+Thumbs.db

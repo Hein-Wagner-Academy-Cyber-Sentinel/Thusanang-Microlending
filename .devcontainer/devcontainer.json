@@ -1,0 +1,28 @@
+{
+  "name": "Build It Anywhere — Cyber Sentinel",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+  "// note": "This dev container matches the toolchain tested in the accessible build guide: Ubuntu, Python with a virtual environment, Git, Docker, OpenTofu, and the account-free Moto AWS emulator. It is used automatically by GitHub Codespaces; for local WSL work, follow the build guide instead.",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "remoteUser": "vscode",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "hashicorp.terraform",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

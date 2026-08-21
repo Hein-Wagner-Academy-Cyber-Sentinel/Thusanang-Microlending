@@ -1,0 +1,5 @@
+flowchart TD
+  U[Branch staff] -->|HTTPS| WAF[Edge and WAF]
+  WAF --> APP[App tier, container]
+  APP --> DB[(Encrypted store)]
+  APP --> LOG[Wazuh SIEM]
