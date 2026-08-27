@@ -10,10 +10,10 @@ Replace the placeholders below in your first Friday (Phase 1), then commit.
 
 ## Our pair
 
-- **Persona:** _(Thusanang Microlending)_
-- **Student A:** _(Yanga Tutshana)_
-- **Student B:** _(Hattinie Freyer)_
-- **The platform in one paragraph:** _(write this in Phase 1 and refine it all year — what you are building, for whom, and why it matters to the business)_
+- **Persona:** _Thusanang Microlending_
+- **Student A:** _Yanga Tutshana_
+- **Student B:** _Hattinie Freyer_
+- **The platform in one paragraph:** _We are buiding a cloud architexture for Thusanang Microlending, a microleading company who is expanding to other provices._
 
 ## How this repository is organised
 
