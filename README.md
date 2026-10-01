@@ -13,7 +13,11 @@ Replace the placeholders below in your first Friday (Phase 1), then commit.
 - **Persona:** _Thusanang Microlending_
 - **Student A:** _Yanga Tutshana_
 - **Student B:** _Hattinie Freyer_
-- **The platform in one paragraph:** _We are buiding a cloud architexture for Thusanang Microlending, a microleading company who is expanding to other provices._
+- **The platform in one paragraph:** _We are building a cloud architexture solution for Thusanang Microlending, a microleading company who is expanding to other provices within South Africa._
+
+## Phase 1 Roles
+* **Build Lead:** Hattinie Freyer (Owns infrastructure code, container definitions, toolchain setup, and pipeline configuration)
+* **Assurance Lead:** Yanga Tutshana (Owns threat modeling, scanner findings and remediation, runbooks, and evidence records) 
 
 ## How this repository is organised
 
