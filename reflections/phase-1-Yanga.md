@@ -1,4 +1,4 @@
-# Phase 1 Reflection — Student A
+# Phase 1 Reflection — Yanga
 
 ## What did I do?
 
