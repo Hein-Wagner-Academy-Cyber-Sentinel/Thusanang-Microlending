@@ -82,12 +82,13 @@ Phase 1
 - POPIA Exposure Assessment
 - Project Charter
 - Threat Model v0
+- POPIA Exposure Assessment: Thusanang Microlending
+- Individual Phase 1 Reflections
 
 ### In Progress
 
 - Toolchain Verification Evidence
 - Pipeline Verification Evidence
-- Individual Phase 1 Reflections
 
 ## Evidence Principle
 
