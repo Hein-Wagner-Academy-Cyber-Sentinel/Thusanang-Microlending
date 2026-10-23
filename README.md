@@ -1,57 +1,117 @@
-#/ Build It Anywhere — Pair Project Repository
+# Build It Anywhere — Pair Project Repository
 
-/**Cyber Sentinel Programme, Cohort 3, Year 2 — Hein Wagner Academy**
+**Cyber Sentinel Programme, Cohort 3, Year 2 — Hein Wagner Academy**
 
-This is your pair's project repository for the whole year. It **is** your portfolio: everything you build, secure, and prove lives here, and its commit history is the evidence that you did the work continuously rather than at the last minute.
+This repository serves as the primary portfolio for the Build It Anywhere project. It contains the business analysis, security artefacts, architecture work, implementation evidence, operational documentation, and reflections produced throughout the project lifecycle. The repository history provides traceable evidence of continuous development and decision-making.
 
-Replace the placeholders below in your first Friday (Phase 1), then commit.
+## Our Pair
 
----
+- **Persona:** Thusanang Microlending
+- **Student A:** Yanga Tutshana
+- **Student B:** Hattinie Freyer
 
-## Our pair
+### The Platform
 
-- **Persona:** _Thusanang Microlending_
-- **Student A:** _Yanga Tutshana_
-- **Student B:** _Hattinie Freyer_
-- **The platform in one paragraph:** _We are building a cloud architexture solution for Thusanang Microlending, a microleading company who is expanding to other provices within South Africa._
+This project focuses on the analysis, design, and security planning of a digital loan origination platform for Thusanang Microlending. The platform supports customer onboarding, loan applications, document handling, affordability assessments, lending decisions, and authorised employee access to customer records. The proposed solution is intended to support business growth, distributed operations, and the protection of sensitive personal and financial information while remaining aligned with identified business risks and POPIA considerations.
 
-## Phase 1 Roles
-* **Build Lead:** Hattinie Freyer (Owns infrastructure code, container definitions, toolchain setup, and pipeline configuration)
-* **Assurance Lead:** Yanga Tutshana (Owns threat modeling, scanner findings and remediation, runbooks, and evidence records) 
+## Repository Structure
 
-## How this repository is organised
+Each folder contains its own README explaining its purpose and expected contents.
 
-Every folder has its own `README.md` explaining exactly what belongs in it. In order of the year:
+### charter/
 
-- **charter/** — your project charter, business profile, and POPIA exposure assessment (Phase 1)
-- **threat-model/** — the threat model, versions 0 to 3, each kept (Phases 1 to 4)
-- **architecture/** — the Bicep design, identity model, control mapping, and Mermaid diagrams with written descriptions (Phase 2)
-- **infrastructure/** — the OpenTofu definition and its plan output (Phase 3B onward)
-- **hardening/** — the Ansible playbook and Lynis before-and-after reports (Phase 3A)
-- **containers/** — the Dockerfile and image scan reports (Phase 3B and 3D)
-- **runbooks/** — shutdown and restore, disaster recovery, and incident response (Phases 3A, 3C, 4)
-- **ai/** — the AI feature, its risk assessment, and its governance controls (Phase 4)
-- **automation/** — your Python tooling with tests (Phase 5)
-- **cost/** — the costed bill of materials and scenario models (Phase 5)
-- **evidence/** — asciinema casts, scanner reports, log extracts, pipeline run records (all year)
-- **reflections/** — one reflection **per student, per phase**, in your own words (all year)
+Business and governance artefacts produced during Phase 1:
 
-## The one rule that matters most
+- charter.md
+- business-profile.md
+- popia-exposure.md
 
-**Evidence is always text.** No screenshots, anywhere, ever. Every proof of work is a committed file, a terminal transcript (`asciinema`), a scanner report, a pipeline log, or a diagram source with its written description. This is a hard rule, it is in the rubric, and it is what makes your work fully accessible.
+### threat-model/
 
-## Getting started (Phase 1)
+Threat model versions and supporting risk analysis artefacts developed throughout the project.
 
-1. Make sure your environment is set up using the **accessible build guide** (WSL/Ubuntu, the UniFi certificate step, and your `alp-env` Python environment).
-2. Fill in the placeholders in this README and commit.
-3. Confirm the starter pipeline runs green — see `.github/workflows/ci.yml`.
-4. Work through `charter/` and `threat-model/` for your persona.
+### architecture/
 
-## Every Friday, before you leave
+Architecture descriptions, diagrams, identity model, control mappings, and supporting design documentation.
 
-Never end a session with uncommitted work or a failing pipeline. Capture your evidence, write your reflection, commit, and confirm the pipeline is green.
+### infrastructure/
 
-```
+Infrastructure definitions, deployment artefacts, plans, and environment-related documentation.
+
+### hardening/
+
+System hardening activities, configuration evidence, and assessment reports.
+
+### containers/
+
+Container definitions, security assessments, and related artefacts.
+
+### runbooks/
+
+Operational procedures, disaster recovery documentation, incident response guidance, and restoration processes.
+
+### ai/
+
+AI feature documentation, governance considerations, risk assessments, and supporting controls.
+
+### automation/
+
+Automation tooling, scripts, tests, and supporting documentation.
+
+### cost/
+
+Cost models, assumptions, and bill-of-materials documentation.
+
+### evidence/
+
+Text-native evidence including terminal recordings, pipeline evidence, reports, logs, plans, and assessment outputs.
+
+### reflections/
+
+Individual reflections produced by each student for every project phase.
+
+## Project Status
+
+### Current Phase
+
+Phase 1
+
+### Completed
+
+- Business Profile
+- POPIA Exposure Assessment
+- Project Charter
+- Threat Model v0
+
+### In Progress
+
+- Toolchain Verification Evidence
+- Pipeline Verification Evidence
+- Individual Phase 1 Reflections
+
+## Evidence Principle
+
+All project evidence should remain accessible, traceable, and text-based wherever possible. Evidence may include source files, reports, terminal recordings, pipeline logs, scanner reports, plans, transcripts, and written descriptions. Screenshots should not be relied upon as primary evidence.
+
+## Getting Started (Phase 1)
+
+1. Ensure the development environment has been configured according to the project setup guidance.
+2. Verify the required toolchain is functioning correctly.
+3. Confirm the starter pipeline completes successfully.
+4. Complete the Phase 1 business artefacts.
+5. Commit and push changes regularly.
+
+## Weekly Workflow
+
+Before ending a working session:
+
+- Capture project evidence.
+- Update required documentation.
+- Record individual reflections where required.
+- Commit outstanding changes.
+- Confirm the pipeline is passing.
+
+```bash
 git add -A
 git commit -m "Phase X: short description of what changed"
 git push
