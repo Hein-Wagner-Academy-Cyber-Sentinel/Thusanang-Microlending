@@ -1,6 +1,6 @@
-#POPIA Exposure Assessment: Thusanang Microlending
+POPIA Exposure Assessment: Thusanang Microlending
 
-##Why POPIA Applies
+Why POPIA Applies
 
 Thusanang Microlending processes personal information as part of its lending activities. The digital loan origination platform is expected to collect, store, process, and use information relating to individuals during customer onboarding, affordability assessments, loan applications, and ongoing loan management. As a result, the organisation's activities fall within the scope of the Protection of Personal Information Act (POPIA).
 POPIA requires organisations processing personal information to take appropriate and reasonable measures to protect that information against loss, damage, unauthorised access, and unlawful processing.
@@ -15,7 +15,7 @@ Credit and affordability information
 Loan applications and lending records
 This information is required to support lending decisions and associated business operations.
 
-##Information Requiring the Greatest Protection
+Information Requiring the Greatest Protection
 
 The following information is considered particularly sensitive because misuse, disclosure, or loss could create the greatest risk for affected individuals:
 South African identity numbers
@@ -43,7 +43,7 @@ Loss of customer trust
 Operational disruption
 Because customer information is essential to lending operations, any significant compromise could affect both business performance and customer confidence.
 
-##Security Implications
+Security Implications
 
 The organisation requires measures that support:
 Protection of personal information throughout its lifecycle
@@ -53,6 +53,6 @@ Protection against unauthorised disclosure, alteration, or loss
 Continued availability of information required for lending operations
 These considerations provide a business justification for the security architecture and control-selection activities that will be developed in later project phases.
 
-##Conclusion
+Conclusion
 
 POPIA exposure arises primarily from the collection and processing of personal, financial, and credit-related information. Protecting this information is therefore both a regulatory consideration and a business requirement for Thusanang Microlending.
