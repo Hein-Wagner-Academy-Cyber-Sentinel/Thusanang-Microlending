@@ -41,10 +41,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: gitleaks
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Gitleaks (Docker)
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/path" \
+            -w /path \
+            ghcr.io/gitleaks/gitleaks:latest \
+            git /path --verbose --redact
 
   # ---------------------------------------------------------------------------
   # Infrastructure-as-code policy scanning (Checkov).

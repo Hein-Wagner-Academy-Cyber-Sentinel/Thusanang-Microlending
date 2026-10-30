@@ -1,0 +1,84 @@
+name: ci
+
+# Build It Anywhere starter pipeline.
+#
+# PHASE 1: this pipeline is ADVISORY. It runs on every push and pull request,
+# reports what it finds, and always passes ("soft fail"), so your very first
+# commit is green. Its job early on is only to get you into the habit of every
+# change being checked automatically.
+#
+# LATER (Phases 3B, 3C, 3D): you make these checks ENFORCING by removing the
+# "soft_fail" / "continue-on-error" settings, so a finding blocks the merge.
+# The comments below mark exactly what to change and when.
+
+on: [push, pull_request]
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Housekeeping: a check that always passes, so a brand-new repo is green
+  # even before you have written any infrastructure. Safe to keep all year.
+  # ---------------------------------------------------------------------------
+  housekeeping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm the repository checked out
+        run: |
+          echo "Repository checked out successfully."
+          echo "Folders present:"
+          ls -1
+
+  # ---------------------------------------------------------------------------
+  # Secret scanning (gitleaks).
+  # PHASE 1: advisory (continue-on-error: true) so it never blocks you yet.
+  # PHASE 3B: make this enforcing by deleting the continue-on-error line, so a
+  #           committed secret blocks the merge. This is the first gate you turn on.
+  # ---------------------------------------------------------------------------
+  secret-scan:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # PHASE 3B: delete this line to make secret scanning enforcing
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ---------------------------------------------------------------------------
+  # Infrastructure-as-code policy scanning (Checkov).
+  # PHASE 1: advisory (soft_fail: true). It only runs once you have .tf files.
+  # PHASE 3B: turn ONE policy gate enforcing (soft_fail: false).
+  # PHASE 3C: keep tightening.
+  # PHASE 3D: fully enforcing — this is where you prove a blocked merge.
+  # ---------------------------------------------------------------------------
+  iac-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          soft_fail: true      # PHASE 3B onward: set to false to make this enforcing
+          quiet: true
+          compact: true
+
+  # ---------------------------------------------------------------------------
+  # Container image scanning (Trivy).
+  # PHASE 1: advisory. It only has an effect once you have a Dockerfile/image.
+  # PHASE 3C/3D: set exit-code to 1 and choose a severity threshold so a
+  #              vulnerable image blocks the merge.
+  # ---------------------------------------------------------------------------
+  image-scan:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # PHASE 3D: delete this line to make image scanning enforcing
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trivy filesystem scan (advisory)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          exit-code: '0'       # PHASE 3D: set to '1' and add severity: 'CRITICAL,HIGH' to enforce
+          format: table
