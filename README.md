@@ -82,12 +82,12 @@ Phase 1
 - POPIA Exposure Assessment
 - Project Charter
 - Threat Model v0
+- Toolchain Verification Evidence
+- Pipeline Verification Evidence
+- Individual Phase 1 Reflection
 
 ### In Progress
 
-- Toolchain Verification Evidence
-- Pipeline Verification Evidence
-- Individual Phase 1 Reflections
 
 ## Evidence Principle
 
